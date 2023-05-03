@@ -12,20 +12,24 @@ import {
   MDBBtn,
   MDBBadge
 } from 'mdb-react-ui-kit';
+import Link from 'next/link'
 
 const Navbar = () => {
     const [showNavText, setShowNavText] = useState(false);
     return ( 
         <MDBNavbar expand='lg' light bgColor='light'>
         <MDBContainer>
-        <MDBNavbarBrand href='#'>
-            <img
+        
+          
+                <Link href='/'>
+                  <div className="nav-link ps-0"> <img
               src='https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp'
               height='30'
               alt=''
               loading='lazy'
-            />
-          </MDBNavbarBrand>
+            /></div>
+                </Link>
+          
 
           <MDBNavbarToggler
             type='button'
@@ -40,24 +44,30 @@ const Navbar = () => {
           <MDBCollapse navbar show={showNavText}>
             <MDBNavbarNav className='mr-auto mb-2 me-2 mb-lg-0 justify-content-end'>
               <MDBNavbarItem>
-                <MDBNavbarLink active aria-current='page' href='#'>
-                  Shop
-                </MDBNavbarLink>
+                <Link href='/shop'>
+                  <div className="nav-link">Shop</div>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink href='#'>About</MDBNavbarLink>
+                <Link href='/about'>
+                  <div className="nav-link">About</div>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink href='#'>Contact Us</MDBNavbarLink>
+                <Link href='/contact'>
+                  <div className="nav-link">Contact Us</div>
+                </Link>
               </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink href='#'>Account</MDBNavbarLink>
-              </MDBNavbarItem>
+              <Link href='/account'>
+                  <div className="nav-link">Account</div>
+                </Link>
             </MDBNavbarNav>
 
             <div className='position-relative d-inline-block'>
-                <MDBIcon fas icon="shopping-cart" size='lg'/>
-                <MDBBadge color='danger' light pill className='position-absolute translate-middle'>
+              <Link href='/cart'><MDBIcon fas icon="shopping-cart" size='lg' /></Link>
+                
+                <MDBBadge color='danger' light pill className='position-absolute translate-middle'
+                style={{display:"none"}} >
                 {"1"}            
                 </MDBBadge>
             </div>
