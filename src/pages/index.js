@@ -10,6 +10,7 @@ import {
   MDBCarouselItem,
 } from 'mdb-react-ui-kit';
 import {
+  MDBRipple,
   MDBCard,
   MDBCardImage,
   MDBCardBody,
@@ -77,11 +78,11 @@ export default function Home({coffees}) {
               <small className='text-muted mt-auto'><s>200</s></small>
             </div>
           </MDBCardBody>
-          <MDBCardFooter className='d-flex justify-content-center'>
-            <MDBBtn rounded className='mx-2' color='info'>
-            View Item <MDBIcon fas icon="chevron-right" size='md' className='ms-1'/>
+          <MDBCardFooter className='row justify-content-center g-2'>
+          <MDBBtn rounded className='mx-2 col-auto' color='info'>
+            View Details <MDBIcon fas icon="chevron-right" size='md' className='ms-1'/>
             </MDBBtn>
-            <MDBBtn rounded className='mx-2' color='info'>
+            <MDBBtn rounded className='mx-2 col-auto' color='info'>
             Add to cart <MDBIcon fas icon="cart-plus" size='md' className='ms-1'/>
             </MDBBtn>
 
@@ -107,24 +108,7 @@ export default function Home({coffees}) {
 
 
 
-      <MDBCol>
-        <MDBCard className='h-100'>
-          <MDBCardImage
-            src='https://mdbootstrap.com/img/new/standard/city/043.webp'
-            alt='...'
-            position='top'
-          />
-          <MDBCardBody>
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              This card has supporting text below as a natural lead-in to additional content.
-            </MDBCardText>
-          </MDBCardBody>
-          <MDBCardFooter >
-            <small className='text-muted'>Last updated 3 mins ago</small>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
+      
       <MDBCol>
         <MDBCard className='h-100'>
           <MDBCardImage
