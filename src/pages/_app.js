@@ -1,13 +1,28 @@
 import '@/styles/globals.css'
+import '../styles/globals.css'
 import Layout from '../../comps/Layout'
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import "@fortawesome/fontawesome-free/css/all.min.css"
-export default function App({ Component, pageProps }) {
+import SSRProvider from 'react-bootstrap/SSRProvider';
+import { AppContext, AppInitialProps, AppLayoutProps } from 'next/app';
+import { ReactNode } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const App = ({
+  Component,
+  pageProps,
+}) => {
+    const getLayout = Component.getLayout || ((page) => page);
 
   return(
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    
+    <SSRProvider>
+      {getLayout(
+        <Layout>
+            <Component {...pageProps} />
+        </Layout>
+      )}
+      </SSRProvider>
   )
    
 }
+
+export default App;
